@@ -13,10 +13,7 @@ const schema = Yup.object().shape({
   mobile: Yup.string().nullable().matches(/^[6-9]\d{9}$/gi).optional(),
   emergencyContact: Yup.string().matches(/^[6-9]\d{9}$/gi).optional(),
   idType: Yup.string().optional(),
-  govtId: Yup.string().when('idType',{
-    is:'Aadhar',
-    then:Yup.string().required()
-  })
+  govtId: Yup.string().optional(),
   // Yup.string().test(val => {
   //   if (val !== '') {
   //     const id = Yup.ref('idType')
